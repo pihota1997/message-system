@@ -16,7 +16,7 @@ Content-Type: application/json
   "password": "password"
 }
 
-### save message. In Authorization set token from response from login endpoint
+### save message. In Authorization set token after 'Bearer_' from response from login endpoint
 POST http://localhost:9090/api/v1/message
 Content-Type: application/json
 Authorization: Bearer_token
@@ -26,7 +26,7 @@ Authorization: Bearer_token
   "message" : "message"
 }
 
-### get last 10 messages. In Authorization set token from response from login endpoint
+### get last 10 messages. In Authorization set token after 'Bearer_' from response from login endpoint
 POST http://localhost:9090/api/v1/message
 Content-Type: application/json
 Authorization: Bearer_token
