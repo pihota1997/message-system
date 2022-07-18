@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+
+  mysqldb:
+    image: mysql:8.0
+    container_name: mysqldb
+    restart: always
+    ports:
+      - 3316:3306
+    volumes:
+      - /home/messagePikhota/db:/var/lib/db:rw
+    environment:
+      MYSQL_DATABASE: messagedb
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: myqsl
+      MYSQL_PASSWORD: mysql
+    networks:
+      - message-network
+
+  message-system:
+    container_name: message-system
+    image: message-system
+    ports:
+      - 9090:9090
+    restart: always
+    networks:
+      - message-network
+
+networks:
+  message-network:
+    driver: bridge

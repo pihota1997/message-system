@@ -1,0 +1,37 @@
+### user registration
+POST http://localhost:9090/api/v1/registration
+Content-Type: application/json
+
+{
+  "name": "user",
+  "password": "password"
+}
+
+### login
+POST http://localhost:9090/api/v1/login
+Content-Type: application/json
+
+{
+  "name": "user",
+  "password": "password"
+}
+
+### save message. In Authorization set token from response from login endpoint
+POST http://localhost:9090/api/v1/message
+Content-Type: application/json
+Authorization: Bearer_token
+
+{
+  "name" : "user",
+  "message" : "message"
+}
+
+### get last 10 messages. In Authorization set token from response from login endpoint
+POST http://localhost:9090/api/v1/message
+Content-Type: application/json
+Authorization: Bearer_token
+
+{
+  "name" : "user",
+  "message" : "history 10"
+}
