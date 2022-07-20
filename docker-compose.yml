@@ -20,7 +20,7 @@ services:
 
   message-system:
     container_name: message-system
-    image: message-system
+    image: pihota1997/message-system
     ports:
       - 9090:9090
     restart: always
